@@ -12,20 +12,20 @@ export interface SaasConfig {
     billing: BillingConfig;
 }
 
-interface AppConfig {
+export interface AppConfig {
     name: string;
     description: string;
     url: string;
 };
 
-interface BillingConfig {
+export interface BillingConfig {
     trialDays: number;
     gracePeriodDays: number;
     currencies: string[];
     defaultCurrency: string;
 };
 
-interface Feature {
+export interface Feature {
     id: string;
     name: string;
     description: string;
@@ -34,7 +34,7 @@ interface Feature {
 }
 
 
-interface Plan {
+export interface Plan {
     id: string;
     name: string;
     description: string;
@@ -57,5 +57,6 @@ interface Plan {
 }
 
 //Utility types
-export type PlanId = keyof typeof saasConfig.plans;
-export type FeatureId = keyof typeof saasConfig.features;
+export type PlanId = 'free' | 'starter' | 'professional' | 'enterprise';
+
+export type FeatureId = string;
