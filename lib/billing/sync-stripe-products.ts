@@ -21,7 +21,6 @@ export async function syncStripeProducts() {
       
       // Create monthly price
       const monthlyPrice = await stripe.prices.create({
-        id: plan.stripePriceId?.monthly,
         product: product.id,
         unit_amount: plan.price.monthly,
         currency: saasConfig.billing.defaultCurrency,
@@ -37,7 +36,6 @@ export async function syncStripeProducts() {
       // Create yearly price if defined
       if (plan.price.yearly) {
         const yearlyPrice = await stripe.prices.create({
-          id: plan.stripePriceId?.yearly,
           product: product.id,
           unit_amount: plan.price.yearly,
           currency: saasConfig.billing.defaultCurrency,
@@ -53,7 +51,7 @@ export async function syncStripeProducts() {
       
       results.push({ planId, success: true });
     } catch (error) {
-      results.push({ planId, success: false, error: error.message });
+      results.push({ planId, success: false, error: error instanceof Error ? error.message : String(error) });
     }
   }
   
