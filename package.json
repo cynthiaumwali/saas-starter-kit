@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "stripe:sync": "npx tsx lib/billing/sync-stripe-products.ts"
+    "stripe:sync": "npx tsx lib/billing/sync-stripe-products.ts",
+    "validate:config": "npx tsx lib/utils/validate-config.ts"
   },
   "dependencies": {
     "@sentry/nextjs": "^10.56.0",
