@@ -35,7 +35,7 @@ export interface Feature {
 
 
 export interface Plan {
-    id: string;
+    id: PlanId;
     name: string;
     description: string;
     price: {
