@@ -48,6 +48,12 @@ interface Plan {
     features: string[];
     popular?: boolean;
     hidden?: boolean;
+    stripeProductId?: string,
+    stripePriceId?: {
+      monthly: string,
+      yearly: string,
+    },
+
 }
 
 //Utility types

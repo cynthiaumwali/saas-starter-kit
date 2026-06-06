@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "stripe:sync": "npx tsx lib/billing/sync-stripe-products.ts"
   },
   "dependencies": {
     "@sentry/nextjs": "^10.56.0",
